@@ -14,6 +14,16 @@
 - Instead of dropping missing values, I preserved them by creating new flags such as `Missing_Age` and `Missing_Cabin`, to retain hidden information.
 - Decision Tree was intuitive and easy to interpret, but Random Forest gave more stable and better generalization.
 
+## 🧠 Thought Process Behind Feature Use
+
+While exploring the data, I considered the potential significance of the `Cabin` column. In theory, cabin data could reflect a passenger's physical location on the ship — which might correlate with access to lifeboats or proximity to danger.
+
+However, the majority of the `Cabin` data is missing.
+
+Instead of discarding the column entirely, I turned the missingness into a new feature: `Missing_Cabin`. Interestingly, passengers with missing cabin info were more likely not to survive. One possible explanation is that their location wasn’t recorded because they didn’t make it.
+
+This is one example of how **missing data isn't always "noise" — it can be a hidden signal.**
+
 ## ⚙️ Modeling Approach
 
 - **Models used**: Decision Tree (baseline), then Random Forest (improved)
